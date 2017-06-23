@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MultiLogin</string>
+
+    <string name="toolbar_title">Choose your favorite option</string>
 </resources>

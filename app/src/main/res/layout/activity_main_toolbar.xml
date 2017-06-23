@@ -1,0 +1,16 @@
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:minHeight="?attr/actionBarSize"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/MainToolbar">
+
+    <TextView
+        android:id="@+id/toolbar_title"
+        android:text="@string/toolbar_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/MainToolbarText"/>
+
+</android.support.v7.widget.Toolbar>

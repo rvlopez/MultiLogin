@@ -16,6 +16,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.EmailLoginActivity">
+
+        </activity>
+        <activity android:name=".activities.FacebookLoginActivity">
+
+        </activity>
+        <activity android:name=".activities.TwitterLoginActivity">
+
+        </activity>
+        <activity android:name=".activities.GoogleLoginActivity">
+
+        </activity>
+
+        <activity android:name=".navigator.Navigator">
+        </activity>
+
     </application>
 
 </manifest>
