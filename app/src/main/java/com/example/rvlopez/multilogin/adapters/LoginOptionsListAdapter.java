@@ -1,7 +1,6 @@
 package com.example.rvlopez.multilogin.adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +11,6 @@ import android.widget.TextView;
 
 import com.example.rvlopez.multilogin.R;
 import com.example.rvlopez.multilogin.models.LoginOptionModel;
-import com.example.rvlopez.multilogin.navigator.Navigator;
-import com.example.rvlopez.multilogin.utils.Constants;
 
 import java.util.List;
 
@@ -39,12 +36,22 @@ public class LoginOptionsListAdapter extends RecyclerView.Adapter<LoginOptionsLi
         }
     }
 
+    public interface OnItemClickListener {
+        void onOptionItemClicked(String option);
+    }
+
     private Context context;
     private List<LoginOptionModel> loginOptionModelList;
+
+    private OnItemClickListener onItemClickListener;
 
     public LoginOptionsListAdapter(Context context, List<LoginOptionModel> loginOptionModelList) {
         this.context = context;
         this.loginOptionModelList = loginOptionModelList;
+    }
+
+    public void setOnItemClickListener (OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
     }
 
     @Override
@@ -61,9 +68,8 @@ public class LoginOptionsListAdapter extends RecyclerView.Adapter<LoginOptionsLi
         holder.itemLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, Navigator.class);
-                intent.putExtra(Constants.NAVIGATE, holder.optionName.getText());
-                context.startActivity(intent);
+                String activitySelected = (String) holder.optionName.getText();
+                LoginOptionsListAdapter.this.onItemClickListener.onOptionItemClicked(activitySelected);
             }
         });
     }

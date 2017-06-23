@@ -28,10 +28,6 @@
         <activity android:name=".activities.GoogleLoginActivity">
 
         </activity>
-
-        <activity android:name=".navigator.Navigator">
-        </activity>
-
     </application>
 
 </manifest>

@@ -10,10 +10,12 @@ import android.widget.TextView;
 import com.example.rvlopez.multilogin.R;
 import com.example.rvlopez.multilogin.adapters.LoginOptionsListAdapter;
 import com.example.rvlopez.multilogin.helpers.DataHelper;
+import com.example.rvlopez.multilogin.navigator.Navigator;
+import com.example.rvlopez.multilogin.utils.Constants;
 
 import butterknife.BindView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements LoginOptionsListAdapter.OnItemClickListener {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -43,6 +45,26 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         LoginOptionsListAdapter loginOptionsListAdapter = new LoginOptionsListAdapter(this, DataHelper.getLoginOptionsList());
+        loginOptionsListAdapter.setOnItemClickListener(this);
         recyclerView.setAdapter(loginOptionsListAdapter);
+    }
+
+    @Override
+    public void onOptionItemClicked(String option) {
+        Navigator navigator = Navigator.getInstance();
+        switch (option) {
+            case Constants.EMAIL_TITLE:
+                navigator.nagigateToEmailLoginActivity(this);
+                break;
+            case Constants.GOOGLE_TITLE:
+                navigator.navigateToGoogleLoginActivity(this);
+                break;
+            case Constants.FACEBOOK_TITLE:
+                navigator.navigateToFacebookLoginActivity(this);
+                break;
+            case Constants.TWITTER_TITLE:
+                navigator.navigateToTwitterLoginActivity(this);
+                break;
+        }
     }
 }
