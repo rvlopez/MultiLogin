@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.rvlopez.multilogin.R;
 import com.example.rvlopez.multilogin.adapters.LoginOptionsListAdapter;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements LoginOptionsListA
         initRecycler();
     }
 
+    //TODO: Try to rebase initToolbar and override a different toolbars in a different activities
     private void initToolbar() {
         setSupportActionBar(toolbar);
     }
@@ -65,6 +67,8 @@ public class MainActivity extends AppCompatActivity implements LoginOptionsListA
             case Constants.TWITTER_TITLE:
                 navigator.navigateToTwitterLoginActivity(this);
                 break;
+            case Constants.FINGERPRINT_TITLE:
+                Toast.makeText(this, "Coming soon!", Toast.LENGTH_SHORT).show();
         }
     }
 }
