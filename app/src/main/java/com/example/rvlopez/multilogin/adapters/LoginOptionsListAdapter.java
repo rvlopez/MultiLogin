@@ -40,13 +40,11 @@ public class LoginOptionsListAdapter extends RecyclerView.Adapter<LoginOptionsLi
         void onOptionItemClicked(String option, ImageView imageView);
     }
 
-    private Context context;
     private List<LoginOptionModel> loginOptionModelList;
 
     private OnItemClickListener onItemClickListener;
 
-    public LoginOptionsListAdapter(Context context, List<LoginOptionModel> loginOptionModelList) {
-        this.context = context;
+    public LoginOptionsListAdapter(List<LoginOptionModel> loginOptionModelList) {
         this.loginOptionModelList = loginOptionModelList;
     }
 

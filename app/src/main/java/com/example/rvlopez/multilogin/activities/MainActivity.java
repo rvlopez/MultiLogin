@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements LoginOptionsListA
 
         recyclerView.setLayoutManager(layoutManager);
 
-        LoginOptionsListAdapter loginOptionsListAdapter = new LoginOptionsListAdapter(this, DataHelper.getLoginOptionsList());
+        LoginOptionsListAdapter loginOptionsListAdapter = new LoginOptionsListAdapter(DataHelper.getLoginOptionsList());
         loginOptionsListAdapter.setOnItemClickListener(this);
         recyclerView.setAdapter(loginOptionsListAdapter);
     }
