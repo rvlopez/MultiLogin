@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowContentTransitions">true</item>
     </style>
 
     <style name="OptionTextFont" parent="AppTheme">
@@ -23,6 +24,12 @@
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:textColor">@color/lightGrey</item>
+    </style>
+
+    <style name="LoginToolbar">
+        <item name="android:textColor">@color/darkGrey</item>
+        <item name="android:homeAsUpIndicator">@color/darkGrey</item>
+        <item name="android:background">@color/lightGrey</item>
     </style>
 
 </resources>

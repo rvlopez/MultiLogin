@@ -16,16 +16,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.EmailLoginActivity">
+        <activity
+            android:name=".activities.EmailLoginActivity"
+            android:parentActivityName=".activities.MainActivity">
 
         </activity>
-        <activity android:name=".activities.FacebookLoginActivity">
+        <activity
+            android:name=".activities.FacebookLoginActivity"
+            android:parentActivityName=".activities.MainActivity">
 
         </activity>
-        <activity android:name=".activities.TwitterLoginActivity">
+        <activity
+            android:name=".activities.TwitterLoginActivity"
+            android:parentActivityName=".activities.MainActivity">
 
         </activity>
-        <activity android:name=".activities.GoogleLoginActivity">
+        <activity
+            android:name=".activities.GoogleLoginActivity"
+            android:parentActivityName=".activities.MainActivity">
 
         </activity>
     </application>

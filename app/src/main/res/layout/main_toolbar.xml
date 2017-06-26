@@ -8,6 +8,7 @@
 
     <TextView
         android:id="@+id/toolbar_title"
+        android:transitionName="option_icon"
         android:text="@string/toolbar_title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true"
     tools:context="com.example.rvlopez.multilogin.activities.MainActivity">
 
-    <include layout="@layout/activity_main_toolbar"/>
+    <include layout="@layout/main_toolbar"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recycler_view"

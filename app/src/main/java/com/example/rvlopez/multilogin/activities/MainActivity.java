@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,22 +53,23 @@ public class MainActivity extends AppCompatActivity implements LoginOptionsListA
     }
 
     @Override
-    public void onOptionItemClicked(String option) {
+    public void onOptionItemClicked(String option, ImageView imageView) {
         Navigator navigator = Navigator.getInstance();
         switch (option) {
             case Constants.EMAIL_TITLE:
-                navigator.nagigateToEmailLoginActivity(this);
+                navigator.navigateToEmailLoginActivity(this, imageView);
                 break;
             case Constants.GOOGLE_TITLE:
-                navigator.navigateToGoogleLoginActivity(this);
+                navigator.navigateToGoogleLoginActivity(this, imageView);
                 break;
             case Constants.FACEBOOK_TITLE:
-                navigator.navigateToFacebookLoginActivity(this);
+                navigator.navigateToFacebookLoginActivity(this, imageView);
                 break;
             case Constants.TWITTER_TITLE:
-                navigator.navigateToTwitterLoginActivity(this);
+                navigator.navigateToTwitterLoginActivity(this, imageView);
                 break;
             case Constants.FINGERPRINT_TITLE:
+                //TODO: Fingerprint implementation
                 Toast.makeText(this, "Coming soon!", Toast.LENGTH_SHORT).show();
         }
     }

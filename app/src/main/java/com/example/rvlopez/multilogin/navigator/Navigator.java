@@ -1,23 +1,19 @@
 package com.example.rvlopez.multilogin.navigator;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.widget.ImageView;
 
 import com.example.rvlopez.multilogin.activities.EmailLoginActivity;
 import com.example.rvlopez.multilogin.activities.FacebookLoginActivity;
 import com.example.rvlopez.multilogin.activities.GoogleLoginActivity;
-import com.example.rvlopez.multilogin.activities.MainActivity;
 import com.example.rvlopez.multilogin.activities.TwitterLoginActivity;
-import com.example.rvlopez.multilogin.utils.Constants;
 
 public class Navigator {
 
     private static Navigator instance;
-
-    public Navigator() {
-    }
 
     public static Navigator getInstance() {
         if (instance == null) {
@@ -26,31 +22,40 @@ public class Navigator {
         return instance;
     }
 
-    public void nagigateToEmailLoginActivity(Context context) {
+    public void navigateToEmailLoginActivity(Context context, ImageView imageView) {
         if (context != null) {
             Intent intent = EmailLoginActivity.getCallingIntent(context);
-            context.startActivity(intent);
+            /* Shared Element Activity Transition */
+            ActivityOptionsCompat optionsCompat = ActivityOptionsCompat
+                    .makeSceneTransitionAnimation((Activity) context, imageView, "option_icon");
+            context.startActivity(intent, optionsCompat.toBundle());
         }
     }
 
-    public void navigateToGoogleLoginActivity(Context context) {
+    public void navigateToGoogleLoginActivity(Context context, ImageView imageView) {
         if (context != null) {
             Intent intent = GoogleLoginActivity.getCallingIntent(context);
-            context.startActivity(intent);
+            ActivityOptionsCompat optionsCompat = ActivityOptionsCompat
+                    .makeSceneTransitionAnimation((Activity) context, imageView, "option_icon");
+            context.startActivity(intent, optionsCompat.toBundle());
         }
     }
 
-    public void navigateToFacebookLoginActivity(Context context) {
+    public void navigateToFacebookLoginActivity(Context context, ImageView imageView) {
         if (context != null) {
             Intent intent = FacebookLoginActivity.getCallingIntent(context);
-            context.startActivity(intent);
+            ActivityOptionsCompat optionsCompat = ActivityOptionsCompat
+                    .makeSceneTransitionAnimation((Activity) context, imageView, "option_icon");
+            context.startActivity(intent, optionsCompat.toBundle());
         }
     }
 
-    public void navigateToTwitterLoginActivity(Context context) {
+    public void navigateToTwitterLoginActivity(Context context, ImageView imageView) {
         if (context != null) {
             Intent intent = TwitterLoginActivity.getCallingIntent(context);
-            context.startActivity(intent);
+            ActivityOptionsCompat optionsCompat = ActivityOptionsCompat
+                    .makeSceneTransitionAnimation((Activity) context, imageView, "option_icon");
+            context.startActivity(intent, optionsCompat.toBundle());
         }
     }
 }

@@ -37,7 +37,7 @@ public class LoginOptionsListAdapter extends RecyclerView.Adapter<LoginOptionsLi
     }
 
     public interface OnItemClickListener {
-        void onOptionItemClicked(String option);
+        void onOptionItemClicked(String option, ImageView imageView);
     }
 
     private Context context;
@@ -69,7 +69,7 @@ public class LoginOptionsListAdapter extends RecyclerView.Adapter<LoginOptionsLi
             @Override
             public void onClick(View view) {
                 String activitySelected = (String) holder.optionName.getText();
-                LoginOptionsListAdapter.this.onItemClickListener.onOptionItemClicked(activitySelected);
+                LoginOptionsListAdapter.this.onItemClickListener.onOptionItemClicked(activitySelected, holder.optionIcon);
             }
         });
     }
