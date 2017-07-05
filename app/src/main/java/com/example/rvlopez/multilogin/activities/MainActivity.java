@@ -63,10 +63,12 @@ public class MainActivity extends AppCompatActivity implements LoginOptionsListA
                 navigator.navigateToGoogleLoginActivity(this, imageView);
                 break;
             case Constants.FACEBOOK_TITLE:
-                navigator.navigateToFacebookLoginActivity(this, imageView);
+                //navigator.navigateToFacebookLoginActivity(this, imageView);
+                Toast.makeText(this, "Coming soon!", Toast.LENGTH_SHORT).show();
                 break;
             case Constants.TWITTER_TITLE:
-                navigator.navigateToTwitterLoginActivity(this, imageView);
+                //navigator.navigateToTwitterLoginActivity(this, imageView);
+                Toast.makeText(this, "Coming soon!", Toast.LENGTH_SHORT).show();
                 break;
             case Constants.FINGERPRINT_TITLE:
                 //TODO: Fingerprint implementation
